@@ -1,0 +1,3 @@
+ A is at most B
+
+then the probability of our being far from the true value is small, so long as m is large

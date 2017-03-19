@@ -1,0 +1,101 @@
+/home/qq/search/
+chmod -R 777 /home/qq/search/
+gcc exhangeIP.cpp -Wall -lm -lmysqlclient -o a.o
+./a.o
+apt-get install libmysqlclient++-dev
+
+insert into `80` (`ip`, `date`,`name`,`version`, `os`,`other`,`state`,`states`,`http`,`port`,`address`)values ('','','','','','','','','','','','');
+
+
+insert into `23` (`ip`, `date`,`name`,`version`, `os`,`other`,`state`,`states`,`http`,`port`,`address`)values ('','','','','','','','','','','','');
+ [id] => 100000010
+    [0] => 100000010
+    [ip] => qxh9
+    [1] => qxh9
+    [date] => 2016-06-12 08:27:02
+    [2] => 2016-06-12 08:27:02
+    [name] => qxh
+    [3] => qxh
+    [version] => qxh
+    [4] => qxh
+    [os] => qxh
+    [5] => qxh
+    [other] => 
+    [6] => 
+    [state] => qxh
+    [7] => qxh
+    [states] => qxh
+    [8] => qxh
+    [http] => qxh
+    [9] => qxh
+    [port] => 80
+    [10] => 80
+    [address] => korea
+    [11] => korea
+
+/etc/init.d/mysql restart
+
+
+SET SESSION tmp_table_size=256*1024*1024;
+SET SESSION max_heap_table_size=256*1024*1024;
+
+ show variables like '%tmp_table_size%';
+show variables like '%max_heap_table_size%';
+
+/etc/init.d/mysql restart
+chmod -R 755 /etc/mysql/mysql.conf.d/mysqld.cnf
+set global max_heap_table_size=256*1024*1024;
+set global tmp_table_size=1048576000;
+
+ show variables like '%tmp_table_size%';
+ ALTER TABLE `80` MAX_ROWS=1000000000 AVG_ROW_LENGTH=15000;
+select max(id) from `80`; 
+
+sp_spaceused N'nmap'
+
+select concat(round(sum(DATA_LENGTH/1024/1024),2),'MB') as data from `80` where table_schema=`nmap` and table_name=`80`; 
+
+
+
+$res = $cl->Query($query,"src1 src2"); 
+
+如果必须要用INNODB，那么把这条语句的值程序缓存起来，10分钟去维护一下
+innodb_file_per_table=1
+ 2. 当写压力很大的时候，就必须得进行分库操作。 
+    主键尽可能的短，能用tinyint的就不要用int，能用char(5)的就不要用成varchar(50)。
+    计算好表列的长度，能够在一个页中存放5条数据的，那就不要将字段设置的太长使得一个页中只能存放3条或者4条数据。
+    尽量将字段设置为不允许为NULL，因为NULL值在存储和数据处理时系统需要专门的处理，降低了性能。
+    能够用固定长度的就不要用变长字段，比如身份证号就可以使用CHAR(18)，而不应该使用VARCHAR(18)。
+    不要在一个表中建立太多的列，如果一个实体的属性太多时可以考虑进行垂直分割，将常用的字段放在一个表，不常用的字段放另外的表，这样可以减小常用字段表中数据列占用的空间，使得一个数据页中存储更多的数据行。
+    不要将大对象、长字符串和常用的字段放在同一个表中。同样还是出于性能上的考虑，比如有个产品表，里面有产品ID、产品名字、产品售价、产品图片、产品描述等字段，那么我们可以将产品ID、产品名字、产品售价这几个常用的而且占用空间小的列放在一个表，然后建立产品ID、产品图片、产品描述这样的表，通过外键约束的方式将大对象数据和长字符串数据放在另一个表中。
+
+
+
+分区的一些优点包括：
+1）、与单个磁盘或文件系统分区相比，可以存储更多的数据。
+2）、对于那些已经失去保存意义的数据，通常可以通过删除与那些数据有关的分区，很容易地删除那些数据。
+3）、一些查询可以得到极大的优化，这主要是借助于满足一个给定WHERE语句的数据可以只保存在一个或多个分区内，这样在查找时就不用查找其他剩余的分区。因为分区可以在创建了分区表后进行修改，所以在第一次配置分区方案时还不曾这么做时，可以重新组织数据，来提高那些常用查询的效率。
+4）、涉及到例如SUM()和COUNT()这样聚合函数的查询，可以很容易地进行并行处理。这种查询的一个简单例子如 “SELECT salesperson_id, COUNT (orders) as order_total FROM sales GROUP BY salesperson_id；”。通过“并行”，这意味着该查询可以在每个分区上同时进行，最终结果只需通过总计所有分区得到的结果。
+5）、通过跨多个磁盘来分散数据查询，来获得更大的查询吞吐量。
+
+
+CREATE TABLE `pvstat_new` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `date` date NOT NULL DEFAULT '0000-00-00' ,
+  PRIMARY KEY (`ID`),
+  KEY `date_index` (`date`)
+) ENGINE=MyISAM AUTO_INCREMENT=153992813 DEFAULT CHARSET=utf8
+partition by range (to_days(`date`))
+(PARTITION p1 VALUES LESS THAN (to_days('2012-03-31')) ,
+PARTITION p2 VALUES LESS THAN (to_days('2012-04-30')) ,
+PARTITION p3 VALUES LESS THAN (to_days('2012-05-31')));
+
+CREATE TABLE IF NOT EXISTS `nmap`.`80` ( `id` bigint not null auto_increment,`ip` VARCHAR(20) NOT NULL , `date` DATETIME NOT NULL , `name` VARCHAR(20) NOT NULL , `version` VARCHAR(250) NOT NULL, `os` VARCHAR(20) NOT NULL  , `other` VARCHAR(150) NOT NULL, `state` VARCHAR(20) NOT NULL, `states` VARCHAR(25) NOT NULL ,`http` VARCHAR(2600) NOT NULL,`port` VARCHAR(20) NOT NULL,`address` VARCHAR(50) NOT NULL,primary key (`id`))ENGINE = InnoDB PARTITION BY RANGE (`id`) (PARTITION P0 VALUES LESS THAN (25000000),PARTITION P1 VALUES LESS THAN (50000000), PARTITION P2 VALUES LESS THAN (75000000), PARTITION P3 VALUES LESS THAN MAXVALUE);
+分区的一些优点包括：
+1）、与单个磁盘或文件系统分区相比，可以存储更多的数据。
+2）、对于那些已经失去保存意义的数据，通常可以通过删除与那些数据有关的分区，很容易地删除那些数据。
+3）、一些查询可以得到极大的优化，这主要是借助于满足一个给定WHERE语句的数据可以只保存在一个或多个分区内，这样在查找时就不用查找其他剩余的分区。因为分区可以在创建了分区表后进行修改，所以在第一次配置分区方案时还不曾这么做时，可以重新组织数据，来提高那些常用查询的效率。
+4）、涉及到例如SUM()和COUNT()这样聚合函数的查询，可以很容易地进行并行处理。这种查询的一个简单例子如 “SELECT salesperson_id, COUNT (orders) as order_total FROM sales GROUP BY salesperson_id；”。通过“并行”，这意味着该查询可以在每个分区上同时进行，最终结果只需通过总计所有分区得到的结果。
+5）、通过跨多个磁盘来分散数据查询，来获得更大的查询吞吐量。
+    INSERT INTO `test`(`ip`,`date`,`name`,`version`,`os`, `other`, `state`,`states`,`http`,`port`,`country`) SELECT  `ip`,`date`,`name`,`version`,`os`, `other`, `state`, `states`,`http`,`port`,`address`  FROM `80`  
+

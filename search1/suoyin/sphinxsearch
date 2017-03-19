@@ -1,0 +1,71 @@
+sphinx
+    apt-get remove sphinxsearch -y
+    apt-get install sphinxsearch -y
+cp /etc/sphinxsearch/sphinx.conf.sample /etc/sphinxsearch/sphinx.conf
+...................................................
+mysql -h0 -P9306
+
+
+service sphinxsearch start
+cp /etc/sphinxsearch/sphinx.conf.sample /etc/sphinxsearch/sphinx.conf
+cp sphinx.conf /etc/sphinxsearch/sphinx.conf
+vi /etc/default/sphinxsearch
+mv /home/qq/searchall/linuxsearch/suoyin/sphinx.conf /etc/sphinxsearch/sphinx.conf
+indexer --all --rotate
+searchd
+
+
+2:
+sudo add-apt-repository ppa:builds/sphinxsearch-rel22
+sudo apt-get update
+sudo apt-get install sphinxsearch
+sudo service sphinxsearch start
+create table sph_counter(counter_id int(10),max_doc_id int(10),unique `counter_id` (`counter_id`));
+
+主数据源：
+source main{
+        type			= mysql
+        sql_host                = localhost
+        sql_user                = root
+        sql_pass                =qiu123456
+        sql_db                  = nmap
+        sql_port                = 3306 
+
+sql_query_pre          = SET NAMES utf8
+         sql_query_pre          = SET SESSION query_cache_type=OFF
+
+sql_query               = \
+                          select id,ip,version,http port from test
+
+#sql_attr_uint          = group_id
+ #sql_attr_timestamp     = date_added
+sql_attr_uint		= port
+
+	sql_ranged_throttle	= 0
+
+sql_query_info=select * from test where id=$id
+
+
+
+}
+
+增量数据源//后期添加：
+source delta main{}
+
+主数据索引：
+index main{
+source			= main
+path			= /var/lib/sphinxsearch/data/main
+}
+
+增量数据索引：
+index delta main{}
+
+分布式索引：
+index dist1{}
+
+索引器：内存258
+indexer{}
+
+服务进程：port
+searchd{}

@@ -1,0 +1,124 @@
+ @charset "utf-8";
+/*进度条样式*/ 
+.progressbar_1{ 
+    background-color:#eee; 
+    height:16px; 
+    width:150px; 
+    border:1px solid #bbb; 
+    color:#222; 
+} 
+.progressbar_1 .bar { 
+    background-color:#6CAF00; 
+    height:16px; 
+    width:0; 
+} 
+.ip_detail_info
+ {
+     color: black;
+     
+ }
+.abug
+{
+	width: 400px;
+}
+.bbug
+{
+	width: 150px;
+	
+}
+ *{
+margin:0px;
+padding:0px;
+}
+ #listview{
+ 	color: #000000;
+ 
+ }
+#pagecount{
+height:10%;
+}
+#allbody{
+	font-family: "微软雅黑";
+	font-size: 18px;
+	width: 100%;
+	height: 1000px;
+	background-color: white;
+}
+
+#container{
+	font-family: "微软雅黑";
+	font-size: 18px;
+	width: 100%;
+	height: 1000px;
+	background-color: white;
+}
+
+#ii{
+	float: right;
+}
+#head{
+	width: 100%;
+	height: 10%;
+	max-height: 100%;
+	background-image: url(../img/3.gif);
+	background-size:50% 100%;
+	background-repeat: no-repeat;
+	
+}
+#menu{
+	width: 13%;
+	height: 90%;
+
+	background: white;
+	float:left;
+	font-style: normal;
+}
+#menu2{
+	width: 2%;
+	height: 90%;
+
+	background: white;
+	
+	font-style: normal;
+}
+#footing{
+	width: 100%;
+	height: 0%;
+	background-color: white;
+	clear: both;
+}
+#body{
+	width: 85%;
+	height: 90%;
+	
+	float: right;
+	
+}
+#banner{
+	width: 600px;
+
+	float: right;
+	
+}
+#ipport{
+	width: 500px;
+	
+
+	float: left;
+	
+}
+#ipbanner{
+	width:1200px;
+	min-height:200px; /*高度最小值设置为：100px*/
+height:auto;
+height:200px; /*兼容ie6*/
+clear: both;
+}
+
+.btn{position: relative;overflow: hidden;margin-right: 4px;display:inline-block;*display:inline;padding:4px 10px 4px;font-size:25px;line-height:35px;*line-height:30px;color:#fff;text-align:center;vertical-align:middle;cursor:pointer;background-color:lightskyblue;border:1px solid #cccccc;border-color:#e6e6e6 #e6e6e6 #bfbfbf;border-bottom-color:#b3b3b3;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;}
+.btn input {position: absolute;top: 0; right: 0;margin: 0;border: solid transparent;opacity: 0;filter:alpha(opacity=0); cursor: pointer;}
+.files{height:44px; line-height:44px; margin:10px 0}
+
+
+.btn2{position: relative;overflow: hidden;margin-right: 4px;display:inline-block;*display:inline;padding:4px 10px 4px;font-size:20px;line-height:20px;*line-height:20px;color:#fff;text-align:center;vertical-align:middle;cursor:pointer;background-color:lightskyblue;border:1px solid #cccccc;border-color:#e6e6e6 #e6e6e6 #bfbfbf;border-bottom-color:#b3b3b3;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;}
+.btn2 input {position: absolute;top: 0; right: 0;margin: 0;border: solid transparent;opacity: 0;filter:alpha(opacity=0); cursor: pointer;}

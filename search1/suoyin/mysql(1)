@@ -1,0 +1,267 @@
+china
+alter table nmap1 convert to character set utf8;
+/.....................................................
+
+create table sum (id int(10),total bigint,UNIQUE `id` (`id`));
+
+create table scan (id int(10),usetime varchar(100),times int(10),total bigint, nmapstart bigint,nmapnum int(10),port varchar(300),UNIQUE `id` (`id`));
+
+replace into scan value(1,'',0,0,0,0,'');
+
+REPLACE INTO scan SELECT 1, usetime,times,total,nmapnum+30,port FROM scan
+
+..............................................................................
+scrip info:sum script
+
+CREATE TABLE `nmap`.`machine` ( `name` varchar(100) NOT NULL , `num` int(100) NOT NULL , `isrun` INT(10) NOT NULL , `bar` INT(10) NOT NULL,`date` DATETIME ,script varchar(300),port varchar(20),address varchar(100),lefttime varchar(100) );
+
+replace into machine ()
+
+''''''''''''''''''''''''''''''''''''''''''''''''''''
+distribute machine:
+create table dis_machine (id int(10),isrun int(10),UNIQUE `id` (`id`));
+....................................................
+create new nmap
+
+create table nmap_tableinfo (`id` bigint not null auto_increment,`name` varchar(100), `date` DATETIME NOT NULL,UNIQUE `id` (`id`) );
+
+nmap:addressid
+CREATE TABLE IF NOT EXISTS `nmap`.`nmap1` ( `id` bigint not null auto_increment,`ip` VARCHAR(20) NOT NULL , `date` DATETIME NOT NULL , `name` VARCHAR(20) NOT NULL , `version` VARCHAR(250) NOT NULL, `os` VARCHAR(20) NOT NULL  , `other` VARCHAR(150) NOT NULL, `state` VARCHAR(20) NOT NULL, `states` VARCHAR(25) NOT NULL ,`http` VARCHAR(2600) NOT NULL,`port` VARCHAR(20) NOT NULL,`address` VARCHAR(30),primary key (`id`))ENGINE = InnoDB PARTITION BY RANGE (`id`) (PARTITION P0 VALUES LESS THAN (25000000),PARTITION P1 VALUES LESS THAN (50000000), PARTITION P2 VALUES LESS THAN (75000000), PARTITION P3 VALUES LESS THAN(100000000), PARTITION P4 VALUES LESS THAN(125000000), PARTITION P5 VALUES LESS THAN(150000000), PARTITION P6 VALUES LESS THAN(175000000), PARTITION P7 VALUES LESS THAN(200000000))character set = utf8;;
+
+control:
+create table newtime (id int(10),isrun int(10),version varchar(50),UNIQUE `id` (`id`));
+insert into newtime values(1,0,'');
+........................................................
+
+CREATE TABLE `nmap`.`person` ( `username` VARCHAR(30) NOT NULL , `password` VARCHAR(30) NOT NULL , `education` INT(10) NOT NULL , `mail` VARCHAR(50) NOT NULL ) ENGINE = InnoDB;
+insert into person value('qq','qiu123456','1','1498457145@qq.com');
+
+输入法：
+sudo apt-get install fcitx-table-wbpy
+配置当前输入法添加google输入法
+
+create table bug(id int(10) primary key auto_increment,version varchar(100),name varchar(100))CHARSET=gb2312;
+
+create table script(id int(10) primary key auto_increment,version varchar(100),name varchar(100))CHARSET=gb2312;
+
+CREATE TABLE `nmap`.`date` ( `id` int(11) auto_increment primary key not null, `date` DATE,UNIQUE `date` (`date`));
+
+select * from `80` where date>='2016-05-27 00:00:00' order by date desc limit 0,10
+update machine set num=0,date='2016-05-27 00:00:00' 
+insert into person value('qq','qiu123456','1','1498457145@qq.com');
+
+alter table machine add lefttime DATETIME;
+
+
+drop database zmap;
+drop database nmap;
+create database zmap;
+create database nmap;
+
+insert into `machine` value("all",0,0,0,now(),'','','','');
+insert into `machine` value("sum",0,0,0,now(),'','','','');
+insert into `machine` value("a",0,0,0,now(),'','','','');
+insert into `machine` value("b",0,0,0,now(),'','','','');
+insert into `machine` value("c",0,0,0,now(),'','','','');
+insert into `machine` value("d",0,0,0,now(),'','','','');
+insert into `machine` value("tt",0,0,0,now(),'','','','');
+
+
+
+insert into `machine` value("tt",0,20);
+
+use nmap
+CREATE TABLE `nmap`.`80` ( `ip` VARCHAR(20) NOT NULL , `date` DATETIME NOT NULL , `name` VARCHAR(20)  , `version` VARCHAR(250) , `os` VARCHAR(20)  , `other` VARCHAR(150), `state` VARCHAR(20)  , `states` VARCHAR(25) ,`http` VARCHAR(2600),`port` VARCHAR(20),`address` VARCHAR(50),index `ip` (`ip`))ENGINE = InnoDB;
+CREATE TABLE `nmap`.`23` ( `ip` VARCHAR(20) NOT NULL , `date` DATETIME NOT NULL , `name` VARCHAR(20)  , `version` VARCHAR(250) , `os` VARCHAR(20)  , `other` VARCHAR(150), `state` VARCHAR(20)  , `states` VARCHAR(25) ,`http` VARCHAR(2400),`port` VARCHAR(20),`address` VARCHAR(50),index `ip` (`ip`))ENGINE = InnoDB;
+CREATE TABLE `nmap`.`22` ( `ip` VARCHAR(20) NOT NULL , `date` DATETIME NOT NULL , `name` VARCHAR(20)  , `version` VARCHAR(250) , `os` VARCHAR(20)  , `other` VARCHAR(150), `state` VARCHAR(20)  , `states` VARCHAR(25) ,`http` VARCHAR(2400),`port` VARCHAR(20),`address` VARCHAR(50),index `ip` (`ip`))ENGINE = InnoDB;
+CREATE TABLE `nmap`.`443` ( `ip` VARCHAR(20) NOT NULL , `date` DATETIME NOT NULL , `name` VARCHAR(20)  , `version` VARCHAR(250) , `os` VARCHAR(20)  , `other` VARCHAR(150), `state` VARCHAR(20)  , `states` VARCHAR(25) ,`http` VARCHAR(2600),`port` VARCHAR(20),`address` VARCHAR(50),index `ip` (`ip`))ENGINE = InnoDB;
+CREATE TABLE `nmap`.`3306` ( `ip` VARCHAR(20) NOT NULL , `date` DATETIME NOT NULL , `name` VARCHAR(20)  , `version` VARCHAR(250) , `os` VARCHAR(20)  , `other` VARCHAR(150), `state` VARCHAR(20)  , `states` VARCHAR(25) ,`http` VARCHAR(2400),`port` VARCHAR(20),`address` VARCHAR(50),index `ip` (`ip`))ENGINE = InnoDB;
+CREATE TABLE `nmap`.`445` ( `ip` VARCHAR(20) NOT NULL , `date` DATETIME NOT NULL , `name` VARCHAR(20)  , `version` VARCHAR(250) , `os` VARCHAR(20)  , `other` VARCHAR(150), `state` VARCHAR(20)  , `states` VARCHAR(25) ,`http` VARCHAR(2400),`port` VARCHAR(20),`address` VARCHAR(50),index `ip` (`ip`))ENGINE = InnoDB;
+CREATE TABLE `nmap`.`139` ( `ip` VARCHAR(20) NOT NULL , `date` DATETIME NOT NULL , `name` VARCHAR(20)  , `version` VARCHAR(250) , `os` VARCHAR(20)  , `other` VARCHAR(150), `state` VARCHAR(20)  , `states` VARCHAR(25) ,`http` VARCHAR(2400),`port` VARCHAR(20),`address` VARCHAR(50),index `ip` (`ip`))ENGINE = InnoDB;
+CREATE TABLE `nmap`.`21` ( `ip` VARCHAR(20) NOT NULL , `date` DATETIME NOT NULL , `name` VARCHAR(20)  , `version` VARCHAR(250) , `os` VARCHAR(20)  , `other` VARCHAR(150), `state` VARCHAR(20)  , `states` VARCHAR(25) ,`http` VARCHAR(2400),`port` VARCHAR(20),`address` VARCHAR(50),index `ip` (`ip`))ENGINE = InnoDB;
+CREATE TABLE `nmap`.`110` ( `ip` VARCHAR(20) NOT NULL , `date` DATETIME NOT NULL , `name` VARCHAR(20)  , `version` VARCHAR(250) , `os` VARCHAR(20)  , `other` VARCHAR(150), `state` VARCHAR(20)  , `states` VARCHAR(25) ,`http` VARCHAR(2400),`port` VARCHAR(20),`address` VARCHAR(50),index `ip` (`ip`))ENGINE = InnoDB;
+CREATE TABLE `nmap`.`25` ( `ip` VARCHAR(20) NOT NULL , `date` DATETIME NOT NULL , `name` VARCHAR(20)  , `version` VARCHAR(250) , `os` VARCHAR(20)  , `other` VARCHAR(150), `state` VARCHAR(20)  , `states` VARCHAR(25) ,`http` VARCHAR(2400),`port` VARCHAR(20),`address` VARCHAR(50),index `ip` (`ip`))ENGINE = InnoDB;
+
+
+
+
+CREATE TABLE `nmap`.`zmap80` ( `ip` VARCHAR(20) NOT NULL , `date` DATETIME NOT NULL , UNIQUE `ip` (`ip`))ENGINE = InnoDB;
+CREATE TABLE `nmap`.`zmap23` ( `ip` VARCHAR(20) NOT NULL , `date` DATETIME NOT NULL , UNIQUE `ip` (`ip`))ENGINE = InnoDB;
+CREATE TABLE `nmap`.`zmap22` ( `ip` VARCHAR(20) NOT NULL , `date` DATETIME NOT NULL  , UNIQUE `ip` (`ip`))ENGINE = InnoDB;
+CREATE TABLE `nmap`.`zmap443` ( `ip` VARCHAR(20) NOT NULL , `date` DATETIME NOT NULL  , UNIQUE `ip` (`ip`))ENGINE = InnoDB;
+CREATE TABLE `nmap`.`zmap3306` ( `ip` VARCHAR(20) NOT NULL , `date` DATETIME NOT NULL , UNIQUE `ip` (`ip`))ENGINE = InnoDB;
+CREATE TABLE `nmap`.`zmap445` ( `ip` VARCHAR(20) NOT NULL , `date` DATETIME NOT NULL  , UNIQUE `ip` (`ip`))ENGINE = InnoDB;
+CREATE TABLE `nmap`.`zmap139` ( `ip` VARCHAR(20) NOT NULL , `date` DATETIME NOT NULL , UNIQUE `ip` (`ip`))ENGINE = InnoDB;
+CREATE TABLE `nmap`.`zmap21` ( `ip` VARCHAR(20) NOT NULL , `date` DATETIME NOT NULL  , UNIQUE `ip` (`ip`))ENGINE = InnoDB;
+CREATE TABLE `nmap`.`zmap110` ( `ip` VARCHAR(20) NOT NULL , `date` DATETIME NOT NULL , UNIQUE `ip` (`ip`))ENGINE = InnoDB;
+CREATE TABLE `nmap`.`zmap25` ( `ip` VARCHAR(20) NOT NULL , `date` DATETIME NOT NULL ,  UNIQUE `ip` (`ip`))ENGINE = InnoDB;
+
+
+80,3128,9080,1080,23,443,25,110,3306,1433
+
+80,23,22,443,3306,445,110,21,135,25
+
+alter table `80` MODIFY `http` VARCHAR(2000);
+alter table `443` MODIFY `version` VARCHAR(200);
+alter table `nmap2` MODIFY `port` int(10);
+drop table `80`;
+drop table `135`;
+drop table `3389`;
+
+
+
+ALTER  TABLE  `80`  ADD  INDEX ip (  `ip`  );
+ALTER  TABLE  `443`  ADD  INDEX ip (  `ip`  );
+ALTER  TABLE  `3306`  ADD  INDEX ip (  `ip`  );
+ALTER  TABLE  `445`  ADD  INDEX ip (  `ip`  );
+ALTER  TABLE  `110`  ADD  INDEX ip (  `ip`  );
+ALTER  TABLE  `21`  ADD  INDEX ip (  `ip`  );
+ALTER  TABLE  `135`  ADD  INDEX ip (  `ip`  );
+ALTER  TABLE  `25`  ADD  INDEX ip (  `ip`  );
+ALTER  TABLE  `23`  ADD  INDEX ip (  `ip`  );
+ALTER  TABLE  `22`  ADD  INDEX ip (  `ip`  );
+
+zmap -B 12M -w kk.txt -p 80 -s 50000-60000 -o 80.csv
+
+CREATE TABLE IF NOT EXISTS `nmap`.`nmap2` ( `id` bigint not null auto_increment,`ip` VARCHAR(20) NOT NULL , `date` DATETIME NOT NULL , `name` VARCHAR(20) NOT NULL , `version` VARCHAR(250) NOT NULL, `os` VARCHAR(20) NOT NULL  , `other` VARCHAR(150) NOT NULL, `state` VARCHAR(20) NOT NULL, `states` VARCHAR(25) NOT NULL ,`http` VARCHAR(2600) NOT NULL,`port` VARCHAR(20) NOT NULL,`address` VARCHAR(30),primary key (`id`))ENGINE = InnoDB PARTITION BY RANGE (`id`) (PARTITION P0 VALUES LESS THAN (25000000),PARTITION P1 VALUES LESS THAN (50000000), PARTITION P2 VALUES LESS THAN (75000000), PARTITION P3 VALUES LESS THAN(100000000), PARTITION P4 VALUES LESS THAN(125000000), PARTITION P5 VALUES LESS THAN(150000000), PARTITION P6 VALUES LESS THAN(175000000), PARTITION P7 VALUES LESS THAN(200000000) ) DEFAULT CHARSET=utf8;
+drop database zmap
+drop database nmap
+ mysqldump -u root -p nmap  > hhh.sql
+  mysqldump -u root -p nmap  > nnmap.sql
+mysqldump -u root -pqiu123456 nmap sum> nnmap.sql
+  source zmap.sql
+REPLACE into `80` values ("ss",now(),"ss","ss","ss","ss","ss","ss","ss",'80',"ss");
+select * from `80` where ip like "%211.153%";
+sudo apt-get autoremove --purge mysql-server-5.0 -y
+sudo apt-get remove mysql-server -y
+sudo apt-get autoremove mysql-server -y
+sudo apt-get remove mysql-common -y
+dpkg -l |grep ^rc|awk '{print $2}' |sudo xargs dpkg -P 
+sudo apt-get install mysql-server -y
+sudo apt-get install mysql-client -y
+source /home/qq/下载/nmap.sql
+python /home/qq/searchall/linuxsearch/笔记/mysqltest.py
+
+python:
+sudo apt-get install python-setuptools -y
+
+sudo apt-get install libmysqld-dev -y
+
+sudo apt-get install libmysqlclient-dev -y
+
+sudo apt-get install python-dev -y
+
+
+sudo apt-get install python-mysqldb -y 
+GeoIP数据库
+
+sudo add-apt-repository ppa:mystic-mirage/komodo-edit
+
+sudo apt-get update
+
+sudo apt-get install komodo-edit
+
+安装网站：
+sudo apt-get install apache2
+chmod -R 777 /var/www/html
+sudo apt-get install php libapache2-mod-php
+sudo apt-get install libapache2-mod-php 
+sudo apt-get install php-mysql
+/etc/init.d/apache2 restart
+
+
+
+vim  /etc/apache2/sites-enabled/000-default.conf
+vim  /etc/apache2/apache2.conf
+vim  /etc/apache2/httpd.conf
+vim  /etc/apache2/sites-available/000-default.conf
+修改var/www成：/home/qq/workspace/web/
+chmod -R 777 /home/qq/workspace/web/test2/
+ls /home/qq/workspace/web/test2/     绿的正确
+chmod -R 777 /var/www/html
+/etc/init.d/apache2 restart
+chmod -R 777 /home/qq/kk.py
+sudo apt-get install php libapache2-mod-php
+apt-get install php-gd -y
+apt-get install php-curl -y
+sudo apt-get install php7.0 php-pear libapache2-mod-php7.0 php7.0-mysql
+sudo apt-get install php7.0-curl php7.0-json php7.0-cgi -y
+/etc/init.d/apache2 restart
+sudo apt-get install php7-mysql
+sudo apt-get install php php-MySQL mysql-client -y
+grant all privileges on *.* toroot@"%" identified by "passw0rd" with grant option;
+<?php
+phpinfo();
+?>
+User ${APACHE_RUN_USER}
+Group ${APACHE_RUN_GROUP}
+
+sudo a2enmod cgi
+sudo service apache2 restart
+
+
+vim  /etc/apache2/sites-enabled/000-default.conf
+vim  /etc/apache2/apache2.conf
+ScriptAlias /cgi/ /home/qq/workspace/web/cgi/ 
+
+vim  /etc/apache2/apache2.conf
+<Directory "/home/qq/workspace/web/cgi">
+        AllowOverride None
+        Options +ExecCGI -MultiViews +SymLinksIfOwnerMatch
+        Order allow,deny
+        Allow from all
+        AddHandler cgi-script .cgi .py
+</Directory>
+
+chmod 4755 /usr/bin/python
+
+chmod 777 /home/qq/ipt
+sudo apt-get install php7.0-xsl
+sudo apt-get install php7.0-mysql php-curl php7.0-gd php7.0-intl php-pear php-imagick php7.0-imap php7.0-mcrypt php-memcache  php7.0-ps php7.0-pspell php7.0-recode php7.0-snmp php7.0-sqlite php7.0-tidy php7.0-xmlrpc php7.0-xsl
+
+
+echo "qiu123456" | sudo -S zmap -B 12M -w kk.txt -p 80 -n 10000 -o 80.csv  
+zmap -B 1M -w %s.txt -p %d -s 50000-60000 -o %d.csv
+//////////////////////////////////////////
+gcc -o ipt -Wall ipt.c 
+chmod u+s ./ipt 
+
+
+vim /etc/mysql/mysql.conf.d/mysqld.cnf
+0.0.0.0
+use mysql; 
+grant all privileges on *.* to root@'%' identified by 'qiu123456' with grant option;
+
+sudo /etc/init.d/mysql restart
+mysql -h 192.168.1.114 -u root -pqiu123456
+
+nmap -sV -p 443 --script=/home/qiu2/script/ssl-heartbleed.nse 192.168.137.4 -oX test.xml
+nmap -sV -p 80 --script=/home/qiu2/nmap_nse/ssl-heartbleed.nse www.exploit-db.com
+
+
+
+nmap
+sudo apt-get remove nmap
+
+移除PPA命令:
+sudo add-apt-repository ppa:pi-rho/security
+sudo apt-get update
+sudo apt-get install nmap
+
+sudo apt-get install ppa-purge
+sudo ppa-purge ppa:pi-rho/security
+
+git config --global user.name "qyhboy"
+git config --global user.email 1498457145@qq.com
+ssh -T git@github.com
+
+git remote rm origin
+git remote add origin git@github.com:qyhboy//hello.git  
+
+git add new.lua
+git commit -m "我提交了一个lua." 
+git push origin master
+
+git pull origin master
+
+
