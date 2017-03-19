@@ -251,17 +251,29 @@ sudo apt-get install nmap
 sudo apt-get install ppa-purge
 sudo ppa-purge ppa:pi-rho/security
 
+
+////////////////////////////////////////////////////////////
+
+git --version
+sudo apt-get install git git-core
+
+ssh-keygen -t rsa -b 4096 -C "1498457145@qq.com"
+cat ~/.ssh/id_rsa.pub
+最后将正确的公钥内容拷贝到GitHub的Key文本框中
+ssh -T git@github.com
+
+cd helle
 git config --global user.name "qyhboy"
 git config --global user.email 1498457145@qq.com
-ssh -T git@github.com
+
 
 git remote rm origin
 git remote add origin git@github.com:qyhboy//hello.git  
 
-git add new.lua
-git commit -m "我提交了一个lua." 
+git add search1
+git commit -m "我提交了一个q." 
 git push origin master
 
 git pull origin master
-
+///////////////////////////////////////////////////////
 
